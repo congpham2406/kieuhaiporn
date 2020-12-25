@@ -1,3 +1,2 @@
 # red2020
-code for gart mock red team 2020 
-e
+code for gart mock blue team 2020 
