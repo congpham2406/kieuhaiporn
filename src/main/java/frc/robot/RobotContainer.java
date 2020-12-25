@@ -13,6 +13,8 @@ import edu.wpi.first.wpilibj.XboxController;
 import frc.robot.commands.ExampleCommand;
 import frc.robot.subsystems.Drivebase;
 import frc.robot.subsystems.ExampleSubsystem;
+import frc.robot.subsystems.Grabber;
+import frc.robot.subsystems.Lifter;
 import edu.wpi.first.wpilibj2.command.Command;
 
 /**
@@ -25,6 +27,8 @@ public class RobotContainer {
   // The robot's subsystems and commands are defined here...
   private final ExampleSubsystem m_exampleSubsystem = new ExampleSubsystem();
   private final Drivebase drivebase = new Drivebase(); // vscode ngu bo me
+  private final Lifter lifter = new Lifter();
+  private final Grabber grabber = new Grabber();
   private final ExampleCommand m_autoCommand = new ExampleCommand(m_exampleSubsystem);
 
   public static Joystick stick = new Joystick(0);
