@@ -13,6 +13,7 @@ import frc.robot.RobotContainer;
 import frc.robot.Robot;
 
 public class Lifter extends SubsystemBase {
+  
   public WPI_TalonSRX Lifter = new WPI_TalonSRX(7);
 
   @Override

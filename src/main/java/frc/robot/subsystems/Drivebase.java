@@ -13,27 +13,26 @@ import frc.robot.RobotContainer;
 import frc.robot.Robot;
 
 public class Drivebase extends SubsystemBase {
-public WPI_TalonSRX rightEncoded = new WPI_TalonSRX(02);
-public WPI_TalonSRX leftEncoded = new WPI_TalonSRX(01);
-public WPI_TalonSRX rightFollow = new WPI_TalonSRX(03);
-public WPI_TalonSRX leftFollow = new WPI_TalonSRX(04);
-  public Drivebase() {
-    leftFollow.follow(leftEncoded);
-    rightFollow.follow(rightEncoded);
-    rightEncoded.setInverted(true);
-
-    
+ 
+  public WPI_TalonSRX rightEncoded = new WPI_TalonSRX(02);
+ public WPI_TalonSRX leftEncoded = new WPI_TalonSRX(01);
+ public WPI_TalonSRX rightFollow = new WPI_TalonSRX(03);
+ public WPI_TalonSRX leftFollow = new WPI_TalonSRX(04);
+ 
+ public Drivebase() {
+  leftFollow.follow(leftEncoded);
+  rightFollow.follow(rightEncoded);
+  rightEncoded.setInverted(true);
   }
+  
   public void drive(double x,double y) {
     leftEncoded.set(x);
     rightEncoded.set(y);
-    
-    // lmao yeet
   }
+  
   @Override
   public void periodic() {
     drive(RobotContainer.stick.getRawAxis(1) * 0.8, RobotContainer.stick.getRawAxis(5) * 0.8);
-    
   }
 }
 
