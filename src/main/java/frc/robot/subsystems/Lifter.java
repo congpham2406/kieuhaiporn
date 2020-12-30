@@ -13,15 +13,18 @@ import frc.robot.RobotContainer;
 import frc.robot.Robot;
 
 public class Lifter extends SubsystemBase {
-public WPI_TalonSRX Lifter = new WPI_TalonSRX(070);
+  public WPI_TalonSRX Lifter = new WPI_TalonSRX(7);
 
   @Override
-public void periodic() {
-if (RobotContainer.stick.getRawButton(1) == true) {
-  Lifter.set(1);
-}
-if  (RobotContainer.stick.getRawButton(2) == true) {
-  Lifter.set(-1);
-}
+  public void periodic() {
+    if (RobotContainer.stick.getRawButton(1)) {
+      Lifter.set(1);
+    }
+    else if  (RobotContainer.stick.getRawButton(2)) {
+      Lifter.set(-1);
+    }
+    else {
+      Lifter.stopMotor();
+    }
   }
 }

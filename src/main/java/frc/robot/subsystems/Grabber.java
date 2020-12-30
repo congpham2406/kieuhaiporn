@@ -13,15 +13,18 @@ import frc.robot.RobotContainer;
 import frc.robot.Robot;
 
 public class Grabber extends SubsystemBase {
-public WPI_TalonSRX Grabber = new WPI_TalonSRX(11);
+  public WPI_TalonSRX Grabber = new WPI_TalonSRX(11);
 
   @Override
-public void periodic() {
-if (RobotContainer.stick.getRawButton(3) == true) {
-  Grabber.set(1);
-}
-if  (RobotContainer.stick.getRawButton(4) == true) {
-  Grabber.set(-1);
-}
+  public void periodic() {
+    if (RobotContainer.stick.getRawButton(3)) {
+      Grabber.set(1);
+    }
+    else if (RobotContainer.stick.getRawButton(4)) {
+      Grabber.set(-1);
+    }
+    else {
+      Grabber.stopMotor();
+    }
   }
 }
